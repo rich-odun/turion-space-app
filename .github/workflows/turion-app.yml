@@ -164,7 +164,7 @@ jobs:
         registry: ${{ env.ECR_REPOSITORY }}
         username: ${{ secrets.AWS_ACCESS_KEY_ID }}  
         password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        #region: ${{ secrets.AWS_REGION }}
+        region: ${{ secrets.AWS_REGION }}
 
     - name: Build Image 
       run: | 
