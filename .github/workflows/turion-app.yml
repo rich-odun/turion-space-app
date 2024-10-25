@@ -189,11 +189,11 @@ jobs:
 
       - name: Pull Docker Image from ECR 
         run: |
-          docker pull 611512058022.dkr.ecr.us-east-1.amazonaws.com/turion-space-app:${GITHUB_RUN_NUMBER}
+          docker pull ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${GITHUB_RUN_NUMBER}
 
       - name: Run Integration Tests inside Docker Container 
         run: |
-          docker run --rm -v $(pwd):/results 611512058022.dkr.ecr.us-east-1.amazonaws.com/turion-space-app:${GITHUB_RUN_NUMBER} pytest --junitxml=/results/integration-test-results.xml
+          docker run --rm -v $(pwd):/results ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${GITHUB_RUN_NUMBER} pytest --junitxml=/results/integration-test-results.xml
 
       - name: List Files in Current Directory
         run: |
