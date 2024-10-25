@@ -30,7 +30,7 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master  
         env:
           GITHUB_TOKEN: ${{ secrets.NEW_GITHUB_TOKEN }} 
-          #ORGANIZATION_KEY: ${{ secrets.ORGANIZATION_KEY }} 
+          ORGANIZATION_KEY: ${{ secrets.ORGANIZATION_KEY }} 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
         with:
           args: >
