@@ -11,7 +11,7 @@ on:
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
   EKS_CLUSTER_NAME: ${{ secrets.EKS_CLUSTER_NAME }}
-  ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }} # Use this to update ECR registry
+  ECR_REGISTRY: "166941686774.dkr.ecr.us-east-1.amazonaws.com" # Use this to update ECR registry
   ECR_REPOSITORY: turion-space-app #update repo name if needed
   IMAGE_TAG: ${{ github.run_number }}
 
