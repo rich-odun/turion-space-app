@@ -32,14 +32,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.NEW_GITHUB_TOKEN }} 
           #ORGANIZATION_KEY: ${{ secrets.ORGANIZATION_KEY }} 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
-        # with:
-        #   args: >
-        #     -Dsonar.organization=${{ secrets.ORGANIZATION_KEY }}
-        #     -Dsonar.projectKey=${{ secrets.PROJECT_KEY }} 
-        #     -Dsonar.exclusions=venv/**
-        #     -Dsonar.c.file.suffixes=-
-        #     -Dsonar.cpp.file.suffixes=-
-        #     -Dsonar.objc.file.suffixes=-
+        with:
+          args: >
+            -Dsonar.organization=${{ secrets.ORGANIZATION_KEY }}
+            -Dsonar.projectKey=${{ secrets.PROJECT_KEY }} 
+            -Dsonar.exclusions=venv/**
+            -Dsonar.c.file.suffixes=-
+            -Dsonar.cpp.file.suffixes=-
+            -Dsonar.objc.file.suffixes=-
 
       - name: Check SonarCloud Quality Gate 
         run: |
